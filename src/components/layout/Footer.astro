@@ -1,0 +1,94 @@
+---
+import { footerLinks } from "@data/navLinks";
+import { SocialNetworksUrl } from "@data/socialNetworks";
+
+import FacebookIcon from "@assets/icons/FB.svg";
+import InstagramIcon from "@assets/icons/IG.svg";
+import LinkedinIcon from "@assets/icons/Lkin.svg";
+---
+
+<footer class="bg-[#0d2b4b] text-white">
+  <section>
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-16 p-8 max-w-[1300px] mx-auto my-0"
+    >
+      <div>
+        <h3 class="text-xl font-bold mb-4">Acerca de DIT</h3>
+        <ul class="space-y-2">
+          {
+            footerLinks["Acerca de DIT"].map((link) => (
+              <li>
+                <a href={link.href} class="hover:text-octonary">
+                  {link.title}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-bold mb-4">Servicios Telecom</h3>
+        <ul class="space-y-2">
+          {
+            footerLinks["Servicios Telecom"].map((link) => (
+              <li>
+                <a href={link.href} class="hover:text-octonary">
+                  {link.title}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-bold mb-4">Servicios DIT</h3>
+        <ul class="space-y-2">
+          {
+            footerLinks["Servicios DIT"].map((link) => (
+              <li>
+                <a href={link.href} class="hover:text-octonary">
+                  {link.title}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+    <div
+      class="flex flex-wrap justify-between gap-8 p-4 pt-0 text-sm max-w-[1300px] mx-auto my-0"
+    >
+      <a href="/">
+        <img class="w-32" src="" alt="logo" aria-label="logo maplenet" />
+      </a>
+      <ul class="flex items-center justify-center gap-6">
+        <li><a href="/legal/terminos">Aviso legal</a></li>
+        <li><a href="/legal/privacidad">Protección de datos</a></li>
+        <li><a href="/legal/cookies">Política de cookies</a></li>
+        <li><a href="/legal/cookies">Canal de denuncias y consultas</a></li>
+      </ul>
+      <ul class="flex gap-10">
+        <li>
+          <a target="_blank" href={SocialNetworksUrl.Facebook}>
+            <img src={FacebookIcon.src} alt="Instagram" class="w-8" />
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href={SocialNetworksUrl.Instagram}>
+            <img src={InstagramIcon.src} alt="Instagram" class="w-8" />
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href={SocialNetworksUrl.LinkedIn}>
+            <img src={LinkedinIcon.src} alt="Instagram" class="w-8" />
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <p class="text-center text-sm mb-4">
+    Todos los derechos reservados. &copy; {new Date().getFullYear()} - DIT GROUP
+  </p>
+</footer>
