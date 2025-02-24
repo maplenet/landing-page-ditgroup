@@ -1,21 +1,14 @@
 ---
+interface Props {
+  width?: number;
+  height?: number;
+}
 
+const { width = 225.12, height = 103.33 } = Astro.props;
 ---
 
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 225.12 103.33"
-  ><defs
-    ><style>
-      .cls-1 {
-        fill: #ededed;
-      }
-      .cls-2 {
-        fill: #e3051f;
-      }
-      .cls-3 {
-        fill: #c4c2d4;
-      }
-    </style></defs
-  ><g id="Layer_2" data-name="Layer 2"
+  ><defs></defs><g id="Layer_2" data-name="Layer 2"
     ><g id="Layer_1-2" data-name="Layer 1"
       ><rect class="cls-1" width="225.12" height="103.33" rx="14.38"
       ></rect><path
@@ -156,3 +149,15 @@
     ></g
   ></svg
 >
+
+<style>
+  .cls-1 {
+    fill: #ededed;
+  }
+  .cls-2 {
+    fill: #e3051f;
+  }
+  .cls-3 {
+    fill: #c4c2d4;
+  }
+</style>
