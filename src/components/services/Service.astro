@@ -1,0 +1,14 @@
+---
+interface Props {
+  title: string;
+  icon?: string;
+}
+
+const { title } = Astro.props;
+---
+
+<article class="py-8 px-20 border border-[#f7f7f7] rounded-lg bg-[#f7f7f7] max-w-5xl">
+  <slot name="icon" />
+  <h1 class="text-2xl font-bold text-[#0d2b4b]">{title}</h1>
+  <slot name="content" />
+</article>
