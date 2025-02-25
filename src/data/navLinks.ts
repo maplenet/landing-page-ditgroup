@@ -33,10 +33,10 @@ export const footerLinks = {
 
 export const enum Routes {
   Home = "/",
-  AcercaDit = "/acerca-dit",
-  Servicios = "/servicios",
-  Transporte = "/transporte",
+  AboutDIT = "/acerca-dit",
+  Services = "/servicios",
+  Transport = "/transporte",
   Outsourcing = "/outsourcing",
-  Comercial = "/comercial",
-  Contacto = "/contacto",
+  Commercial = "/comercial",
+  Contact = "/contacto",
 }
