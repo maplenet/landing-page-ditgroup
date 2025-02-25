@@ -8,13 +8,13 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "@data/consts";
 <!doctype html>
 <html lang="es">
   <Head title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  <body>
+  <body class="min-h-screen px-4 sm:px-6 lg:px-8">
     <Header />
-    <main>
-      <slot />
+    <main class="flex flex-col items-center">
+      <div class="max-w-7xl mx-auto my-0 flex flex-col gap-10">
+        <slot />
+      </div>
     </main>
     <Footer />
   </body>
 </html>
-
-<style></style>

@@ -7,8 +7,6 @@
 
 
 :root {
-	--accent: #2337ff;
-  --accent-dark: #000d8a;
   --black: 15, 18, 25;
   --gray: 96, 115, 159;
   --gray-light: 229, 233, 240;
@@ -52,7 +50,5 @@ html {
 body {
   display: grid;
   grid-template-rows: auto 1fr auto;
-  min-height: 100vh;
-  margin: 0 auto;
   background-color: var(--tertiary);
 }
