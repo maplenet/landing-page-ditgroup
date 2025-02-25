@@ -153,11 +153,20 @@ const { width = 225.12, height = 103.33 } = Astro.props;
 <style>
   .cls-1 {
     fill: #ededed;
+    transition: fill 0.3s ease;
   }
   .cls-2 {
     fill: #e3051f;
+    transition: fill 0.3s ease;
   }
   .cls-3 {
     fill: #c4c2d4;
+    transition: fill 0.3s ease;
+  }
+  svg:hover .cls-1 {
+    fill: #e3051f;
+  }
+  svg:hover .cls-2 {
+    fill: #ededed;
   }
 </style>

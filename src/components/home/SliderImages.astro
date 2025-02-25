@@ -1,4 +1,5 @@
 ---
+import { Routes } from "@data/navLinks";
 import DitComercial from "@icons/DitComercial.astro";
 import DitOutsourcing from "@icons/DitOutsourcing.astro";
 import DitTransport from "@icons/DitTransport.astro";
@@ -6,9 +7,15 @@ import { Image } from "astro:assets";
 ---
 
 <section
-  class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-16 p-8 max-w-7xl mx-auto my-0 h-40"
+  class="flex flex-wrap justify-center gap-8 p-8 mx-auto my-0"
 >
-  <DitTransport />
-  <DitOutsourcing />
-  <DitComercial />
+  <a class="w-72" href={Routes.Transporte}>
+    <DitTransport />
+  </a>
+  <a class="w-72" href={Routes.Outsourcing}>
+    <DitOutsourcing />
+  </a>
+  <a class="w-72" href={Routes.Comercial}>
+    <DitComercial />
+  </a>
 </section>

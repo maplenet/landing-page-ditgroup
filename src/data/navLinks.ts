@@ -28,5 +28,15 @@ export const footerLinks = {
     { title: "DIT Transporte", href: "/transporte" },
     { title: "DIT Outsourcing", href: "/outsourcing" },
     { title: "DIT Comercial", href: "/comercial" },
-  ]
+  ],
 };
+
+export const enum Routes {
+  Home = "/",
+  AcercaDit = "/acerca-dit",
+  Servicios = "/servicios",
+  Transporte = "/transporte",
+  Outsourcing = "/outsourcing",
+  Comercial = "/comercial",
+  Contacto = "/contacto",
+}

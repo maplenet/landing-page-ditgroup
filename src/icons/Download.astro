@@ -1,11 +1,14 @@
 ---
 import IconDownload from "@icons/IconDownload.astro";
+import celular from "@assets/images/Celular DIT Group.webp";
 
 interface Props {
   cls1?: string;
   cls2?: string;
   cls3?: string;
   cls4?: string;
+  width?: number;
+  height?: number;
 }
 
 const {
@@ -13,6 +16,8 @@ const {
   cls2 = "#0d2b4b",
   cls3 = "url(#clip-path)",
   cls4 = "#009ee2",
+  width = 807.8,
+  height = 191.67,
 } = Astro.props;
 ---
 
@@ -34,7 +39,7 @@ const {
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  viewBox="0 0 807.8 191.67"
+  viewBox="90 30 722.8 161.67"
   ><defs
     ><clipPath id="clip-path" transform="translate(96.75 73.18)"
       ><rect class="cls-1" width="711.05" height="105.64" rx="52.82"
@@ -58,8 +63,8 @@ const {
           transform="translate(96.75 73.18)"></path></g
       >
       <text
-        x="62%"
-        y="58%"
+        x="69%"
+        y="64%"
         text-anchor="middle"
         alignment-baseline="middle"
         class="cls-1"
@@ -68,9 +73,32 @@ const {
       >
         Entérate sobre nuestros servicios
       </text>
-      <g transform="translate(570, 90) scale(0.35)">
+      <a href="https://play.google.com/store/apps" target="_blank">
+        <rect x="58%" y="76%" width="163" height="35" rx="18" fill="#009ee2">
+        </rect>
+        <text
+          x="69%"
+          y="88%"
+          text-anchor="middle"
+          alignment-baseline="middle"
+          font-weight="bold"
+          font-size="24"
+          fill="white"
+        >
+          DESCARGAR
+        </text>
+      </a>
+      <image
+        x="410"
+        y="59"
+        width="500"
+        height="500"
+        href={celular.src}
+        transform="scale(0.35)"
+      />
+      <g transform="translate(580, 92) scale(0.35)">
         <IconDownload />
       </g>
-    </g></g
-  ></svg
->
+    </g>
+  </g>
+</svg>
