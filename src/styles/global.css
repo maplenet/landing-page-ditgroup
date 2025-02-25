@@ -1,10 +1,4 @@
 @import "tailwindcss";
-@import "tailwindcss/preflight";
-@tailwind utilities;
-
-@plugin "@tailwindcss/typography";
-
-
 
 :root {
   --black: 15, 18, 25;
@@ -13,8 +7,8 @@
   --gray-dark: 34, 41, 57;
   --gray-gradient: rgba(var(--gray-light), 50%), #fff;
   --box-shadow: 0 2px 6px rgba(var(--gray), 25%),
-	0 8px 24px rgba(var(--gray), 33%), 0 16px 32px rgba(var(--gray), 33%);
-	
+    0 8px 24px rgba(var(--gray), 33%), 0 16px 32px rgba(var(--gray), 33%);
+
   --primary: #0d2b4b;
   --secondary: #f2f2f2;
   --tertiary: #ffffff;
