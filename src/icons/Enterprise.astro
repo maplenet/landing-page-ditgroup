@@ -1,8 +1,17 @@
 ---
+interface Props {
+  width?: number;
+  height?: number;
+}
 
+const { width = 59.85, height = 54.06 } = Astro.props;
 ---
 
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 59.85 54.06"
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 59.85 54.06"
+  width={width}
+  height={height}
   ><defs></defs><g id="Layer_2" data-name="Layer 2"
     ><g id="Layer_1-2" data-name="Layer 1"
       ><rect class="cls-1" x="9.85" y="27.3" width="14.45" height="1.61"

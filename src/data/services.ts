@@ -1,10 +1,6 @@
-type Service = {
-  title: string;
-  description: string[];
-  list?: string[] | string[][];
-};
+import type { Services } from "@/types/services";
 
-export const services: Service[] = [
+export const services: Services[] = [
   {
     title: "Fibra óptica",
     description: [
@@ -12,22 +8,18 @@ export const services: Service[] = [
       "Entre nuestro servicio que ofrecemos, listamos los siguientes:",
     ],
     list: [
-      ["Survey y Diseño de Redes."],
-      [
-        "Gestión de permisos con entidades públicas citada, por ejemplo: Eléctricas, ABT, ABC, Alcaldías y Gobernaciones.",
-      ],
-      [
-        "Implementación y construcción de redes punto a punto, Multipunto FTTH, FTTB (edificios) y conexiones a abonados.",
-      ],
-      ["Diseño e implementación de redes HFC."],
-      ["Certificados de Redes:"],
+      "Survey y Diseño de Redes.",
+      "Gestión de permisos con entidades públicas citada, por ejemplo: Eléctricas, ABT, ABC, Alcaldías y Gobernaciones.",
+      "Implementación y construcción de redes punto a punto, Multipunto FTTH, FTTB (edificios) y conexiones a abonados.",
+      "Diseño e implementación de redes HFC.",
+      "Certificados de Redes:",
       [
         "Mediciones OTDR.",
         "Mediciones de Potencia.",
         "Mediciones de PMD.",
         "Mediciones de RFC.",
       ],
-      ["Documentación AsBuilt del Enlace o Sitio"],
+      "Documentación AsBuilt del Enlace o Sitio",
     ],
   },
   {

@@ -2,24 +2,20 @@
 import Service from "@components/services/Service.astro";
 import Layout from "@layouts/Layout.astro";
 import { services } from "@data/services";
-import OpticalFiber from "@icons/OpticalFiber.astro";
+import { IconServicesMapper } from "@utils/iconServicesMapper";
 ---
 
 <Layout>
-  <Service title={services[0].title}>
-    <div slot="icon">
-      <OpticalFiber />
-    </div>
-    <div slot="content" class="text-gray-500 max-w-4xl">
-      {services[0].description.map((desc) => <p>{desc}</p>)}
-      {services[0].list && (
-        <ol class="list-disc list-inside">
-          {services[0].list.map((item) => (
-            item==typeof(String) ? <li>{item}</li> : <li>{item}</li>
-            <li>{item}</li>
-          ))}
-        </ol>
-      )}
-    </div>
-  </Service>
+  <section class="mx-auto my-24 flex flex-col gap-10 max-w-10/12">
+    {
+      services.map((service) => {
+        const Icon = IconServicesMapper(service.title);
+        return Icon ? (
+          <Service service={service}>
+            <Icon />
+          </Service>
+        ) : null;
+      })
+    }
+  </section>
 </Layout>
