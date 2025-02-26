@@ -1,0 +1,39 @@
+---
+import Email from "@icons/Email.astro";
+import Whatsapp from "@icons/Whatsapp.astro";
+import { IconDitMapper } from "@utils/iconDitMapper";
+
+interface Props {
+  cls1: string;
+  cls2: string;
+  cls3: string;
+  cls4: string;
+  phone: string;
+  email: string;
+  title: string;
+}
+const { cls1, cls2, cls3, cls4, phone, email, title } = Astro.props;
+
+const Icon = IconDitMapper(title) || (() => null);
+---
+
+<h1 class="text-center text-3xl">CONTÁCTANOS</h1>
+<section
+  style={{ backgroundColor: cls1 }}
+  class=`flex flex-col md:flex-row items-center w-10/12 md:w-2xl p-4 md:h-40 mx-auto rounded-lg text-white mb-14`
+>
+  <slot />
+  {Icon && <Icon cls1={cls1} cls2={cls2} cls3={cls3} cls4={cls4} />}
+  <div
+    class="inline-block h-0.5 md:h-32 md:min-h-4 md:w-0.5 self-stretch bg-neutral-100"
+  >
+  </div>
+  <div class="flex flex-col gap-5 p-5 text-xl">
+    <a class="flex gap-2 items-center" href=`tel:${phone}`
+      ><Whatsapp color={cls4} />{phone}</a
+    >
+    <a class="flex gap-2 items-center" href=`mailto:${email}`
+      ><Email color={cls4} />{email}</a
+    >
+  </div>
+</section>

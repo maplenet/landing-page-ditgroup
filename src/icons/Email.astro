@@ -1,0 +1,30 @@
+---
+interface Props {
+  color?: string;
+  width?: string;
+  height?: string;
+}
+
+const { color = "#f29100", width = "23.38", height = "16.96" } = Astro.props;
+---
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 23.38 16.96"
+  width={width}
+  height={height}
+  ><defs></defs><g id="Layer_2" data-name="Layer 2"
+    ><g id="Layer_1-2" data-name="Layer 1"
+      ><path
+        class="cls-1"
+        d="M21.86,0H1.51A1.52,1.52,0,0,0,0,1.51V15.45A1.51,1.51,0,0,0,1.51,17H21.86a1.51,1.51,0,0,0,1.52-1.51V1.51A1.52,1.52,0,0,0,21.86,0ZM1.34,2l7.74,6.2-7.74,6.2ZM11.82,8.63,2.71,1.34h18ZM10.15,9l1.25,1a.68.68,0,0,0,.85,0l1.2-1,8.09,6.61H1.87Zm4.36-.86L22,2V14.31Z"
+      ></path></g
+    ></g
+  ></svg
+>
+
+<style define:vars={{ color: color }}>
+  .cls-1 {
+    fill: var(--color);
+  }
+</style>

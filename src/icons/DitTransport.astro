@@ -1,5 +1,11 @@
 ---
+interface Props {
+  cls1?: string;
+  cls2?: string;
+  cls3?: string;
+}
 
+const { cls1 = "#ededed", cls2 = "#009ee2", cls3 = "#162d4a" } = Astro.props;
 ---
 
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 225.12 103.33"
@@ -134,17 +140,17 @@
   ></svg
 >
 
-<style>
+<style define:vars={{ cls1: cls1, cls2: cls2, cls3: cls3 }}>
   .cls-1 {
-    fill: #ededed;
+    fill: var(--cls1);
     transition: fill 0.3s ease;
   }
   .cls-2 {
-    fill: #009ee2;
+    fill: var(--cls2);
     transition: fill 0.3s ease;
   }
   .cls-3 {
-    fill: #162d4a;
+    fill: var(--cls3);
     transition: fill 0.3s ease;
   }
   svg:hover .cls-1 {

@@ -49,6 +49,12 @@ body {
   background-color: var(--tertiary);
 }
 
-h1, h2 {
+h1,
+h2 {
   color: var(--primary);
+  font-family: "Exo 2 Bold", sans-serif;
+}
+
+p {
+  color: #606060;
 }
