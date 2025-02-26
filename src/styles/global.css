@@ -48,3 +48,7 @@ body {
   grid-template-rows: auto 1fr auto;
   background-color: var(--tertiary);
 }
+
+h1, h2 {
+  color: var(--primary);
+}
