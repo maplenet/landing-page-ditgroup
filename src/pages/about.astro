@@ -1,0 +1,115 @@
+---
+import Layout from "@layouts/Layout.astro";
+import CardItem from "@components/about/CardItem.astro";
+import {
+  firstAboutSection,
+  secondAboutSection,
+  thirdAboutSection,
+} from "@data/aboutSections";
+import profesionales from "@assets/images/Gestion_de_equipos_en_un_mundo_mas_digital.webp";
+import ServiceDit from "@components/global/ServiceDit.astro";
+import { outsourcingService } from "@data/outsourcingService";
+---
+
+<Layout>
+  <section class="bg-[#f2f2f2] py-16">
+    <div class="max-w-5xl mx-auto">
+      <h1 class="text-center text-3xl font-bold mb-14">NOSOTROS</h1>
+
+      <article
+        class="grid
+          grid-cols-1
+          grid-rows-auto
+          gap-8
+          mx-4
+          md:grid-cols-2
+          md:grid-rows-1"
+      >
+        <CardItem
+          icon={firstAboutSection[0].icon}
+          title={firstAboutSection[0].title}
+          class="md:row-span-3"
+        >
+          <div class="flex flex-col gap-3">
+            {
+              firstAboutSection[0].description.map((text) => (
+                <p class="text-lg leading-5 mb-2 text-gray-700 ">{text}</p>
+              ))
+            }
+          </div>
+        </CardItem>
+
+        <CardItem
+          icon={firstAboutSection[1].icon}
+          title={firstAboutSection[1].title}
+          class="md:row-span-2"
+        >
+          {
+            firstAboutSection[1].description.map((text) => (
+              <p class="text-lg leading-5 mb-2 text-gray-700">{text}</p>
+            ))
+          }
+        </CardItem>
+
+        <CardItem
+          icon={firstAboutSection[2].icon}
+          title={firstAboutSection[2].title}
+        >
+          {
+            firstAboutSection[2].description.map((text) => (
+              <p class="text-lg leading-5 mb-2 text-gray-700">{text}</p>
+            ))
+          }
+        </CardItem>
+      </article>
+    </div>
+  </section>
+
+  <section class="bg-white py-2 w-full">
+    <div class="mx-auto px-4">
+      <h1 class="text-center text-3xl font-bold mb-14">
+        NUESTROS PROFESIONALES
+      </h1>
+
+      <div class="flex flex-wrap md:flex-nowrap items-center gap-4">
+        <div class="flex justify-center md:justify-end w-full md:w-1/2">
+          <img
+            src={profesionales.src}
+            alt="Profesionales DIT"
+            class="md:w-[540px]
+              md:h-[360px]
+              object-contain
+              md:translate-x-[60px]
+              z-0"
+          />
+        </div>
+
+        <div class="flex justify-center md:justify-start w-full md:w-1/2">
+          <div
+            class="bg-white
+              p-9
+              shadow-md
+              md:w-[485px]
+              md:h-[280px]
+              z-10
+              flex
+              items-center
+              justify-center"
+          >
+            <p class="text-lg text-gray-700 leading-5 text-left">
+              {secondAboutSection[0].description}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ServiceDit title="¿CÓMO TRABAJAMOS?" service={thirdAboutSection} />
+
+  <section class="bg-white py-2 w-full">
+    <div class="mx-auto px-4">
+      <h1 class="text-center text-3xl font-bold mb-14">PROPUESTA DE VALOR</h1>
+    </div>
+  </section>
+</Layout>
