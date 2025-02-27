@@ -6,6 +6,7 @@ import InfoDit from "@components/global/InfoDit.astro";
 import ServiceDit from "@components/global/ServiceDit.astro";
 import { transportService } from "@data/transportService";
 import Contact from "@components/global/Contact.astro";
+import { SocialNetworksUrl } from "@data/socialNetworks";
 ---
 
 <Layout>
@@ -22,8 +23,8 @@ import Contact from "@components/global/Contact.astro";
   />
   <Contact
     title="Transport"
-    phone="(+591) 777 77 777"
-    email="info@dittransporte.com.bo"
+    phone={SocialNetworksUrl.Phone}
+    email={SocialNetworksUrl.EmailTransport}
     cls1="#162d4a"
     cls2="#ededed"
     cls3="#009ee2"

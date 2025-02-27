@@ -1,15 +1,24 @@
 ---
 import { navLinks } from "@data/navLinks";
 import Search from "./Search.astro";
+import DitIcon from "@icons/DitIcon.astro";
 ---
 
 <header
-  class="py-8 bg-[#0d2b4b] text-white my-0 flex items-center justify-center"
+  class="py-4 bg-[#0d2b4b] text-white my-0 flex items-center justify-center text-sm"
 >
   <nav class="flex items-center justify-around w-full max-w-7xl">
-    <a href="/"><img src="" alt="logo" /></a>
-    <ul class="flex flex-wrap items-center justify-around w-1/2 font-semibold">
-      {navLinks.map((link) => <a href={link.href}>{link.name}</a>)}
+    <a class="w-16" href="/"><DitIcon /></a>
+    <ul
+      class="flex flex-wrap items-center justify-around w-2/3 font-semibold gap-2"
+    >
+      {
+        navLinks.map((link) => (
+          <a class="hover:text-[#009ee2] transition-colors duration-300" href={link.href}>
+            {link.name}
+          </a>
+        ))
+      }
     </ul>
     <Search />
   </nav>
