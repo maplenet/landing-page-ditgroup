@@ -9,9 +9,10 @@ interface Props {
   hoverBgColor?: string;
   hoverTextColor?: string;
   hoverScale?: boolean;
-  containerMaxW?: string;
   bgColor?: string;
   shadow?: boolean;
+  textColor?: string;
+  maxWidth?: string;
 }
 
 const {
@@ -21,15 +22,18 @@ const {
   hoverBgColor = '#000000',
   hoverTextColor = '#ffffff',
   hoverScale = false,
-  containerMaxW = 'max-w-3xl',
   bgColor = 'bg-white',
   shadow = true,
+  textColor = "#000000", 
+  maxWidth = "48rem"
+  
 } = Astro.props;
 ---
 
 <h1 class="text-center text-3xl">{title}</h1>
 <section
-  class=`mx-auto my-5 flex flex-wrap gap-6 items-center justify-center ${containerMaxW}`
+  style={{ maxWidth: maxWidth }}
+  class=`mx-auto my-5 flex flex-wrap gap-6 items-center justify-center`
 >
   {service.map(({ title, icon }) => (
     <CardService
@@ -41,7 +45,7 @@ const {
       hoverScale={hoverScale}
       bgColor={bgColor}
       shadow={shadow}
-      
+      textColor={textColor}
     />
   ))}
 </section>

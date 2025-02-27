@@ -6,50 +6,44 @@ interface Props {
   hoverBgColor?: string;
   hoverTextColor?: string;
   hoverScale?: boolean;
-  bgColor?: string;
-  shadow?: boolean; 
+  bgColor?: string; // puede ser "#f2f2f2" o "bg-blue-500"
+  shadow?: boolean;
+  textColor?: string;
 }
 
 const {
   title,
   icon: Icon,
-  hasHover = false,              
-  hoverBgColor = '#000000',      
-  hoverTextColor = '#ffffff',    
+
+  hasHover = false,
+  hoverBgColor = "#000000",
+  hoverTextColor = "#ffffff",
   hoverScale = false,
-  bgColor = 'bg-white',   
-  shadow = true,         
+  bgColor = "#ffffff", 
+  shadow = true,
+  textColor = "#3b4049",
 } = Astro.props;
-
-let backgroundClass = "";
-
-if (bgColor) {
-  backgroundClass = "bg-[" + bgColor + "]";
-} 
 ---
 
 <article
   class={`
-    /* Clases base */
-    w-44
-    p-4
-    rounded-lg
-    flex
-    flex-col
-    items-center
-    bg-
+    w-44 
+    p-4 
+    rounded-lg 
+    flex 
+    flex-col 
+    items-center 
     gap-4
-    text-[#3b4049]
-    ${backgroundClass}
-    ${shadow ? "shadow-md" : ""} 
-    ${hasHover ? 'card-service' : ''}
-    ${hasHover && hoverScale ? 'hover:scale-110' : ''}
+    card-base
+    ${shadow ? "shadow-md" : ""}
+    ${hasHover ? "card-service" : ""}
+    ${hasHover && hoverScale ? "hover:scale-110" : ""}
   `}
- 
-  style={hasHover
-    ? `--hover-bg:${hoverBgColor}; --hover-text:${hoverTextColor};`
-    : ''
-  }
+  style={`
+    --base-bg: ${bgColor};
+    --base-color: ${textColor};
+    ${hasHover ? `--hover-bg:${hoverBgColor}; --hover-text:${hoverTextColor};` : ""}
+  `}
 >
   <Icon />
   <h3 class="text-xl text-center font-semibold">
@@ -58,12 +52,13 @@ if (bgColor) {
 </article>
 
 <style>
-  .card-service {
-    transition: all 0.3s ease, color 0.3s ease;
+  .card-base {
+    background-color: var(--base-bg, #ffffff);
+    color: var(--base-color, #3b4049);
+    transition: all 0.3s ease;
   }
-
   .card-service:hover {
     background-color: var(--hover-bg, #000000);
     color: var(--hover-text, #ffffff);
   }
-  </style>
+</style>
