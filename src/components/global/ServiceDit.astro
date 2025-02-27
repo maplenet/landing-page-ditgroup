@@ -7,14 +7,21 @@ interface Props {
     title: string;
     icon: any;
   }[];
+  textColor?: string;
+  maxWidth?: string;
 }
 
-const { title, service } = Astro.props;
+const { title, service, textColor, maxWidth = "48rem" } = Astro.props;
 ---
 
 <h1 class="text-center text-3xl">{title}</h1>
 <section
-  class="mx-auto my-5 flex flex-wrap gap-10 items-center justify-center max-w-3xl"
+  style={{ maxWidth: maxWidth }}
+  class="mx-auto my-5 flex flex-wrap gap-10 items-center justify-center"
 >
-  {service.map(({ title, icon }) => <CardService title={title} icon={icon} />)}
+  {
+    service.map(({ title, icon }) => (
+      <CardService title={title} icon={icon} textColor={textColor} />
+    ))
+  }
 </section>

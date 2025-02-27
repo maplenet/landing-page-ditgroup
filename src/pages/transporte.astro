@@ -1,0 +1,32 @@
+---
+import Banner from "@components/global/Banner.astro";
+import Layout from "@layouts/Layout.astro";
+import banner from "@assets/images/Banners DIT Transporte.webp";
+import InfoDit from "@components/global/InfoDit.astro";
+import ServiceDit from "@components/global/ServiceDit.astro";
+import { transportService } from "@data/transportService";
+import Contact from "@components/global/Contact.astro";
+---
+
+<Layout>
+  <Banner src={banner} alt="DIT Transporte" />
+  <InfoDit
+    title="¿QUÉ ES DIT TRANSPORTE?"
+    description="DIT TRANSPORTE es una división de DIT Group SRL dedicada a brindar soluciones en logística, transporte y almacenaje. El objetivo de esta área es facilitar los procesos de nuestros clientes con personal calificado y experimentado en el manejo de sus materiales y equipos. Nos encargamos de trasladar, inventariar y gestionar para brindar un servicio completo, eficiente y confiable."
+  />
+  <ServiceDit
+    title="SERVICIOS 2025"
+    textColor="#009ee2"
+    service={transportService}
+    maxWidth="56rem"
+  />
+  <Contact
+    title="Transport"
+    phone="(+591) 777 77 777"
+    email="info@dittransporte.com.bo"
+    cls1="#162d4a"
+    cls2="#ededed"
+    cls3="#009ee2"
+    cls4="#009ee2"
+  />
+</Layout>
