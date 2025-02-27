@@ -5,7 +5,7 @@ import {
   usAboutSection,
   ourProfessionalsAboutSection,
   howDoWeWorkAboutSection,
-  valuePropositionAboutSection
+  valuePropositionAboutSection,
 } from "@data/aboutSections";
 import profesionales from "@assets/images/Gestion_de_equipos_en_un_mundo_mas_digital.webp";
 import ServiceDit from "@components/global/ServiceDit.astro";
@@ -51,10 +51,7 @@ import ServiceDit from "@components/global/ServiceDit.astro";
           }
         </CardItem>
 
-        <CardItem
-          icon={usAboutSection[2].icon}
-          title={usAboutSection[2].title}
-        >
+        <CardItem icon={usAboutSection[2].icon} title={usAboutSection[2].title}>
           {
             usAboutSection[2].description.map((text) => (
               <p class="text-lg leading-5 mb-2 text-gray-700">{text}</p>
@@ -122,9 +119,7 @@ import ServiceDit from "@components/global/ServiceDit.astro";
     maxWidth="80rem"
     shadow={false}
     textColor="#606060"
-
   />
 
-  <section class="bg-white py-5 w-full">
-  </section>
+  <section class="bg-white py-5 w-full"></section>
 </Layout>
