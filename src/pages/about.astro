@@ -2,13 +2,13 @@
 import Layout from "@layouts/Layout.astro";
 import CardItem from "@components/about/CardItem.astro";
 import {
-  firstAboutSection,
-  secondAboutSection,
-  thirdAboutSection,
+  usAboutSection,
+  ourProfessionalsAboutSection,
+  howDoWeWorkAboutSection,
+  valuePropositionAboutSection
 } from "@data/aboutSections";
 import profesionales from "@assets/images/Gestion_de_equipos_en_un_mundo_mas_digital.webp";
 import ServiceDit from "@components/global/ServiceDit.astro";
-import { outsourcingService } from "@data/outsourcingService";
 ---
 
 <Layout>
@@ -26,13 +26,13 @@ import { outsourcingService } from "@data/outsourcingService";
           md:grid-rows-1"
       >
         <CardItem
-          icon={firstAboutSection[0].icon}
-          title={firstAboutSection[0].title}
+          icon={usAboutSection[0].icon}
+          title={usAboutSection[0].title}
           class="md:row-span-3"
         >
           <div class="flex flex-col gap-3">
             {
-              firstAboutSection[0].description.map((text) => (
+              usAboutSection[0].description.map((text) => (
                 <p class="text-lg leading-5 mb-2 text-gray-700 ">{text}</p>
               ))
             }
@@ -40,23 +40,23 @@ import { outsourcingService } from "@data/outsourcingService";
         </CardItem>
 
         <CardItem
-          icon={firstAboutSection[1].icon}
-          title={firstAboutSection[1].title}
+          icon={usAboutSection[1].icon}
+          title={usAboutSection[1].title}
           class="md:row-span-2"
         >
           {
-            firstAboutSection[1].description.map((text) => (
+            usAboutSection[1].description.map((text) => (
               <p class="text-lg leading-5 mb-2 text-gray-700">{text}</p>
             ))
           }
         </CardItem>
 
         <CardItem
-          icon={firstAboutSection[2].icon}
-          title={firstAboutSection[2].title}
+          icon={usAboutSection[2].icon}
+          title={usAboutSection[2].title}
         >
           {
-            firstAboutSection[2].description.map((text) => (
+            usAboutSection[2].description.map((text) => (
               <p class="text-lg leading-5 mb-2 text-gray-700">{text}</p>
             ))
           }
@@ -97,7 +97,7 @@ import { outsourcingService } from "@data/outsourcingService";
               justify-center"
           >
             <p class="text-lg text-gray-700 leading-5 text-left">
-              {secondAboutSection[0].description}
+              {ourProfessionalsAboutSection[0].description}
             </p>
           </div>
         </div>
@@ -105,11 +105,25 @@ import { outsourcingService } from "@data/outsourcingService";
     </div>
   </section>
 
-  <ServiceDit title="¿CÓMO TRABAJAMOS?" service={thirdAboutSection} />
+  <ServiceDit
+    title="¿CÓMO TRABAJAMOS?"
+    service={howDoWeWorkAboutSection}
+    hasHover={true}
+    hoverBgColor="#0d2b4b"
+    hoverTextColor="#ffffff"
+    hoverScale={true}
+    containerMaxW="max-w-7xl"
+    bgColor="#f2f2f2"
 
-  <section class="bg-white py-2 w-full">
-    <div class="mx-auto px-4">
-      <h1 class="text-center text-3xl font-bold mb-14">PROPUESTA DE VALOR</h1>
-    </div>
+  />
+  <ServiceDit
+    title="PROPUESTA DE VALOR"
+    service={valuePropositionAboutSection}
+    containerMaxW="max-w-7xl"
+    shadow={false}
+
+  />
+
+  <section class="bg-white py-5 w-full">
   </section>
 </Layout>
