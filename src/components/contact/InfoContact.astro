@@ -1,0 +1,53 @@
+---
+import { SocialNetworksUrl } from "@data/socialNetworks";
+import FacebookIcon from "@assets/icons/FB.svg";
+import InstagramIcon from "@assets/icons/IG.svg";
+import LinkedinIcon from "@assets/icons/Lkin.svg";
+
+---
+
+<div
+    class="flex flex-wrap mx-auto gap-x-60"
+>
+    <div>
+        <h3 class="text-xl font-bold mb-4">Oficina Central</h3>
+        <ul class="space-y-2">
+            {
+                // footerLinks["Acerca de DIT"].map((link) => (
+                //     <li>
+                //         <a
+                //             class="hover:text-[#009ee2] transition-colors duration-300"
+                //             href={link.href}
+                //             class="hover:text-octonary"
+                //         >
+                //             {link.title}
+                //         </a>
+                //     </li>
+                // ))
+            }
+        </ul>
+    </div>
+
+    <div>
+        <h3 class="text-xl font-bold mb-4">Síguenos en:</h3>
+        <ul class="flex gap-10">
+            <li>
+              <a target="_blank" href={SocialNetworksUrl.Facebook}>
+                <img src={FacebookIcon.src} alt="Facebook" class="w-8" />
+              </a>
+            </li>
+            <li>
+              <a target="_blank" href={SocialNetworksUrl.Instagram}>
+                <img src={InstagramIcon.src} alt="Instagram" class="w-8" />
+              </a>
+            </li>
+            <li>
+              <a target="_blank" href={SocialNetworksUrl.LinkedIn}>
+                <img src={LinkedinIcon.src} alt="LinkedIn" class="w-8" />
+              </a>
+            </li>
+          </ul>
+    </div>
+
+ 
+</div>
