@@ -3,3 +3,8 @@ export interface Services {
   description: string[];
   list?: (string | string[])[];
 }
+
+export interface ServiceItem {
+  title: string;
+  icon: any;
+}
