@@ -1,0 +1,51 @@
+---
+import { SocialNetworksUrl } from "@data/socialNetworks";
+import { Image } from "astro:assets";
+import FacebookIcon from "@assets/icons/FB.svg";
+import InstagramIcon from "@assets/icons/IG.svg";
+import LinkedinIcon from "@assets/icons/Lkin.svg";
+import LocationIcon from "@assets/icons/Location.svg";
+import WtsAppIcon from "@assets/icons/WtsApp.svg";
+import MailIcon from "@assets/icons/Mail.svg";
+---
+
+<div class="max-w-7xl mx-auto px-4 my-10 flex flex-col md:flex-row gap-10">
+  <div class="md:w-xl">
+    <h3 class="text-xl font-bold mb-4">Oficina Central</h3>
+    <ul class="space-y-3">
+      <li class="flex items-center gap-2">
+        <Image src={LocationIcon} alt="Lugar" class="w-5 h-5" />
+        <span>C. 20 de Calacoto Esq. C. Gral. Inofuentes Nro. 1375</span>
+      </li>
+      <li class="flex items-center gap-2">
+        <Image src={WtsAppIcon} alt="WhatsApp" class="w-5 h-5" />
+        <span>(+591) 777 77 777</span>
+      </li>
+      <li class="flex items-center gap-2">
+        <Image src={MailIcon} alt="Correo" class="w-5 h-5" />
+        <span>info@dittransporte.com.bo</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="md:w-1/2">
+    <h3 class="text-xl font-bold mb-4">Síguenos en:</h3>
+    <ul class="flex gap-6">
+      <li>
+        <a target="_blank" href={SocialNetworksUrl.Facebook}>
+          <img src={FacebookIcon.src} alt="Facebook" class="w-8" />
+        </a>
+      </li>
+      <li>
+        <a target="_blank" href={SocialNetworksUrl.Instagram}>
+          <img src={InstagramIcon.src} alt="Instagram" class="w-8" />
+        </a>
+      </li>
+      <li>
+        <a target="_blank" href={SocialNetworksUrl.LinkedIn}>
+          <img src={LinkedinIcon.src} alt="LinkedIn" class="w-8" />
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
