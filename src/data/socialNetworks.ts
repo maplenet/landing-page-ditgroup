@@ -3,7 +3,7 @@ export const enum SocialNetworksUrl {
   Instagram = "https://www.instagram.com/dit.group/",
   Facebook = "https://www.facebook.com/ditgrouptelecom",
   LinkedIn = "https://linkedin.com/company/ditgroup",
-  Phone = "(+591) 777 77 777",
+  Phone = "(+591) 2-2792228",
   EmailContact = "contact@ditgroup.com.bo",
   EmailTransport = "info@dittransporte.com.bo",
   EmailOutsourcing = "info@ditoutsourcing.com.bo",
