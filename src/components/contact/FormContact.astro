@@ -1,5 +1,5 @@
 ---
-const ACCESS_KEY = import.meta.env.WEB3FORMS_KEY;
+const ACCESS_KEY = import.meta.env.PUBLIC_WEB3FORMS_KEY;
 ---
 
 <form
@@ -7,41 +7,17 @@ const ACCESS_KEY = import.meta.env.WEB3FORMS_KEY;
   method="POST"
   class="max-w-3xl py-11 px-6 sm:px-12 md:px-8 mx-auto"
 >
-  <!-- 1) Tu Access Key en un campo oculto -->
-  <input 
-    type="hidden"
-    name={ACCESS_KEY} 
-    value="983274a0-99d2-43b2-9499-9847ebc647b8" 
-  />
-
-  <!-- 2) Opcional: asunto y remitente -->
-  <input 
-    type="hidden" 
-    name="subject" 
-    value="Nuevo mensaje desde la Landing" 
-  />
-  <input 
-    type="hidden" 
-    name="from_name" 
-    value="Mi Sitio Web"
-  />
-
-  <!-- 3) Honeypot para filtrar bots (opcional) -->
   <input
-    type="checkbox"
-    name="_honeypot"
-    style="display:none"
-    tabindex="-1"
-    autocomplete="off"
+    type="hidden"
+    name="access_key"
+    value={ACCESS_KEY}
   />
-
-  <!-- 4) Campos reales del formulario (con 'name="..."') -->
+  <input type="hidden" name="redirect" value="https://web3forms.com/success" />
   <h1 class="text-3xl font-bold mb-4 px-3">CONTÁCTANOS</h1>
   <p class="mb-6 px-3">
     ¿Estás interesado en algún producto y/o servicio? <br />
     Llena el siguiente formulario y nos pondremos en contacto.
   </p>
-
   <div class="flex flex-wrap mb-6">
     <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
       <label class="block text-gray-700 text-sm mb-2" for="form-name">
@@ -49,8 +25,7 @@ const ACCESS_KEY = import.meta.env.WEB3FORMS_KEY;
       </label>
       <input
         name="name"
-        class="block w-full bg-gray-200 text-gray-700 rounded py-3 px-4 leading-tight 
-               focus:outline-none focus:bg-white"
+        class="block w-full bg-gray-200 text-gray-700 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
         id="form-name"
         type="text"
         required
@@ -62,15 +37,13 @@ const ACCESS_KEY = import.meta.env.WEB3FORMS_KEY;
       </label>
       <input
         name="company"
-        class="block w-full bg-gray-200 text-gray-700 rounded py-3 px-4 leading-tight 
-               focus:outline-none focus:bg-white"
+        class="block w-full bg-gray-200 text-gray-700 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
         id="form-company"
         type="text"
         required
       />
     </div>
   </div>
-
   <div class="flex flex-wrap mb-6">
     <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
       <label class="block text-gray-700 text-sm mb-2" for="form-email">
@@ -78,8 +51,7 @@ const ACCESS_KEY = import.meta.env.WEB3FORMS_KEY;
       </label>
       <input
         name="email"
-        class="block w-full bg-gray-200 text-gray-700 rounded py-3 px-4 leading-tight 
-               focus:outline-none focus:bg-white"
+        class="block w-full bg-gray-200 text-gray-700 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
         id="form-email"
         type="email"
         required
@@ -91,34 +63,28 @@ const ACCESS_KEY = import.meta.env.WEB3FORMS_KEY;
       </label>
       <input
         name="phone"
-        class="block w-full bg-gray-200 text-gray-700 rounded py-3 px-4 leading-tight 
-               focus:outline-none focus:bg-white"
+        class="block w-full bg-gray-200 text-gray-700 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
         id="form-tel"
         type="tel"
         required
       />
     </div>
   </div>
-
   <div class="w-full px-3 mb-6">
     <label class="block text-gray-700 text-sm mb-2" for="form-area">
       Consulta
     </label>
     <textarea
       name="message"
-      class="block w-full bg-gray-200 text-gray-700 rounded py-3 px-4 leading-tight 
-             focus:outline-none focus:bg-white"
+      class="block w-full bg-gray-200 text-gray-700 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
       id="form-area"
       rows="6"
-      required
-    ></textarea>
+      required></textarea>
   </div>
 
   <div class="text-right px-3">
     <button
-      class="w-full sm:w-auto md:w-auto py-2 px-6 bg-blue-500 hover:bg-blue-600 text-white 
-             rounded font-bold cursor-pointer"
-      type="submit"
+      class="w-full sm:w-auto md:w-auto py-2 px-6 bg-blue-500 hover:bg-blue-600 text-white rounded font-bold cursor-pointer"
     >
       Enviar
     </button>
