@@ -7,4 +7,5 @@ export interface Services {
 export interface ServiceItem {
   title: string;
   icon: any;
+  description?: string;
 }

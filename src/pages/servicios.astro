@@ -3,15 +3,16 @@ import Service from "@components/services/Service.astro";
 import Layout from "@layouts/Layout.astro";
 import { services } from "@data/services";
 import { IconServicesMapper } from "@utils/iconServicesMapper";
+import bg from "@assets/bg-services.svg";
 ---
 
 <Layout>
-  <section class="mx-auto my-24 flex flex-col gap-10 max-w-10/12">
+  <section class="mx-auto my-24 flex flex-col items-center gap-10 w-full max-w-10/12">
     {
-      services.map((service) => {
+      services.map((service, index) => {
         const Icon = IconServicesMapper(service.title);
         return Icon ? (
-          <Service service={service}>
+          <Service service={service} index={index}>
             <Icon />
           </Service>
         ) : null;
@@ -19,3 +20,11 @@ import { IconServicesMapper } from "@utils/iconServicesMapper";
     }
   </section>
 </Layout>
+
+<style define:vars={{ bg: `url(${bg.src})` }}>
+  section {
+    background-image: var(--bg);
+    background-size: cover;
+    background-position: center;
+  }
+</style>

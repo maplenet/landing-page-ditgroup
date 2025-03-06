@@ -3,17 +3,19 @@ import type { Services } from "@/types/services";
 
 interface Props {
   service: Services;
+  index?: number;
 }
 
-const { service } = Astro.props;
+const { service, index = 0 } = Astro.props;
 const { title, description, list } = service;
+const color = index % 2 === 0 ? "#0d2b4b" : "#00aeef";
 ---
 
 <article
   class="py-8 px-20 border border-[#f7f7f7] rounded-lg bg-[#f7f7f7] max-w-5xl shadow-md"
 >
   <slot />
-  <h1 class="text-2xl font-bold mb-4">{title}</h1>
+  <h1 style={{ color: `${color}` }} class="text-2xl font-bold mb-4">{title}</h1>
   <div slot="content" class="text-gray-500 max-w-4xl gap-2 flex flex-col">
     {description.map((desc) => <p>{desc}</p>)}
     {
