@@ -48,21 +48,7 @@ const { width = 800.35, height = 100 } = Astro.props;
                 d="M27.61,38.62a8.28,8.28,0,0,0-8.26,8.27v3.44a.8.8,0,0,0,.8.8H35.08a.86.86,0,0,0,.57-.23.83.83,0,0,0,.23-.57V46.89A8.29,8.29,0,0,0,27.61,38.62Zm6.67,10.91H21V46.89a6.67,6.67,0,0,1,13.33,0Z"
             ></path>
             <foreignObject x="91" y="0" width="182" height="102.6">
-                <div
-                    {...{ xmlns: "http://www.w3.org/1999/xhtml" } as any}
-                    style="
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    text-align: center;
-                    width: 100%;
-                    height: 100%;
-                    font-weight: bold;
-                    font-size: 17px;
-                    color: white;
-                    overflow-wrap: break-word;
-                    padding: 0 10px;
-                  "
+                <div class="resource-content"
                 >
                     Optimización de recursos
                 </div>
@@ -87,5 +73,18 @@ const { width = 800.35, height = 100 } = Astro.props;
     }
     .cls-4 {
         fill: #009ee2;
+    }
+    .resource-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        font-weight: bold;
+        font-size: 17px;
+        color: white;
+        overflow-wrap: break-word;
+        padding: 0 10px;
     }
 </style>

@@ -45,27 +45,9 @@ const { width = 800.35, height = 100 } = Astro.props;
                 d="M56.36,46.6l-6.92,6.92-3-3a1.16,1.16,0,0,0-1.64,0,1.15,1.15,0,0,0,0,1.63L48.63,56a1.15,1.15,0,0,0,.82.34,1.2,1.2,0,0,0,.83-.34L58,48.24a1.16,1.16,0,0,0-1.64-1.64Z"
             ></path>
             <foreignObject x="91" y="0" width="182" height="102.6">
-                <div
-                    {...{ xmlns: "http://www.w3.org/1999/xhtml" } as any}
-                    style="
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    text-align: center;
-                    width: 100%;
-                    height: 100%;
-                    font-weight: bold;
-                    font-size: 17px;
-                    color: white;
-                    overflow-wrap: break-word;
-                    padding: 0 10px;
-                  "
-                >
-                    Confianza en los clientes
-                </div>
+                <div class="trust-content">Confianza en los clientes</div>
             </foreignObject>
-            </g
-        ></g
+        </g></g
     ></svg
 >
 <style>
@@ -80,5 +62,18 @@ const { width = 800.35, height = 100 } = Astro.props;
     }
     .cls-4 {
         fill: #009ee2;
+    }
+    .trust-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        font-weight: bold;
+        font-size: 17px;
+        color: white;
+        overflow-wrap: break-word;
+        padding: 0 10px;
     }
 </style>

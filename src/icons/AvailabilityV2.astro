@@ -48,22 +48,7 @@ const { width = 800.35, height = 100 } = Astro.props;
                 d="M47.92,67.31a1.45,1.45,0,0,1-1.06-.44,1.5,1.5,0,0,1,0-2.11l20.4-20.4a1.5,1.5,0,0,1,2.11,2.12L49,66.87A1.44,1.44,0,0,1,47.92,67.31Z"
             ></path>
             <foreignObject x="91" y="0" width="182" height="102.6">
-                <div
-                    {...{ xmlns: "http://www.w3.org/1999/xhtml" } as any}
-                    style="
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    text-align: center;
-                    width: 100%;
-                    height: 100%;
-                    font-weight: bold;
-                    font-size: 17px;
-                    color: white;
-                    overflow-wrap: break-word;
-                    padding: 0 10px;
-                  "
-                >
+                <div class="available-content">
                     Disponibilidad de atención a tiempo completo
                 </div>
             </foreignObject>
@@ -83,5 +68,18 @@ const { width = 800.35, height = 100 } = Astro.props;
     }
     .cls-4 {
         fill: #009ee2;
+    }
+    .available-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        font-weight: bold;
+        font-size: 17px;
+        color: white;
+        overflow-wrap: break-word;
+        padding: 0 10px;
     }
 </style>
