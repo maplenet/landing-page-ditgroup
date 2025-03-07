@@ -1,0 +1,35 @@
+---
+import Availability from "@icons/AvailabilityV2.astro";
+import Execute from "@icons/ExecuteProjectsV2.astro";
+import Optimization from "@icons/ResourceOptimizationV2.astro";
+import Efficiency from "@icons/TimeEfficiencyV2.astro";
+import Trust from "@icons/TrustV2.astro";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<h1 class="text-center text-3xl">{title}</h1>
+
+<section class="my-5">
+  <div class="max-w-6xl mx-auto flex flex-row flex-wrap gap-6 justify-center">
+    <div class="flex justify-center w-72">
+      <Trust />
+    </div>
+    <div class="flex justify-center w-72">
+      <Execute />
+    </div>
+    <div class="flex justify-center w-72">
+      <Efficiency />
+    </div>
+    <div class="flex justify-center w-72">
+      <Optimization />
+    </div>
+    <div class="flex justify-center w-72">
+      <Availability />
+    </div>
+  </div>
+</section>

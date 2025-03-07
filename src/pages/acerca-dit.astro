@@ -6,10 +6,10 @@ import {
   usAboutSection,
   ourProfessionalsAboutSection,
   howDoWeWorkAboutSection,
-  valuePropositionAboutSection,
 } from "@data/aboutSections";
 import profesionales from "@assets/images/Gestion_de_equipos_en_un_mundo_mas_digital.webp";
 import ServiceDit from "@components/global/ServiceDit.astro";
+import ValuePropositionSection from "@components/about/ValuePropositionSection.astro";
 ---
 
 <Layout>
@@ -110,12 +110,7 @@ import ServiceDit from "@components/global/ServiceDit.astro";
     textColor="#0d2b4b"
     maxWidth="80rem"
   />
-  <ServiceDit
-    title="PROPUESTA DE VALOR"
-    service={valuePropositionAboutSection}
-    maxWidth="80rem"
-    shadow={false}
-    textColor="#606060"
+  <ValuePropositionSection title="PROPUESTA DE VALOR"
   />
 
   <hr class="py-5 w-0 h-0" />
