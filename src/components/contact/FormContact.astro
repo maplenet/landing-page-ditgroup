@@ -1,18 +1,16 @@
 ---
 const ACCESS_KEY = import.meta.env.PUBLIC_WEB3FORMS_KEY;
+const FORM_URL_SEND = import.meta.env.PUBLIC_FORM_URL_SEND;
+const REDIRECT_URL = import.meta.env.PUBLIC_FORM_REDIRECT_URL;
 ---
 
 <form
-  action="https://api.web3forms.com/submit"
+  action={FORM_URL_SEND}
   method="POST"
   class="max-w-3xl py-11 px-6 sm:px-12 md:px-8 mx-auto"
 >
-  <input
-    type="hidden"
-    name="access_key"
-    value={ACCESS_KEY}
-  />
-  <input type="hidden" name="redirect" value="https://web3forms.com/success" />
+  <input type="hidden" name="access_key" value={ACCESS_KEY} />
+  <input type="hidden" name="redirect" value={REDIRECT_URL} />
   <h1 class="text-3xl font-bold mb-4 px-3">CONTÁCTANOS</h1>
   <p class="mb-6 px-3">
     ¿Estás interesado en algún producto y/o servicio? <br />
