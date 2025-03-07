@@ -3,7 +3,7 @@ import { navLinks } from "@data/navLinks";
 import { Image } from "astro:assets";
 import Search from "./Search.astro";
 import DitIcon from "@icons/DitIcon.astro";
-import WtsAppIcon from "@assets/icons/WtsApp.svg";
+import WtsAppIcon from "@assets/icons/icono telefono blanco.svg";
 import MailIcon from "@assets/icons/Mail.svg";
 import LogoFB from "@icons/LogoFB.astro";
 import LogoIG from "@icons/LogoIG.astro";
@@ -12,14 +12,14 @@ import { SocialNetworksUrl } from "@data/socialNetworks";
 ---
 
 <header
-  class="pb-4 bg-[#0d2b4b] text-white my-0 flex flex-col items-center justify-center text-sm"
+  class="pb-4 bg-primary text-white my-0 flex flex-col items-center justify-center text-sm"
 >
-  <div class="bg-[#009ee2] w-full min-h-10">
+  <div class="bg-light-blue w-full min-h-10">
     <div class="max-w-7xl flex flex-wrap items-center justify-between p-2 mx-auto my-0 gap-4">
       <ul class="flex gap-6">
         <li class="flex items-center gap-2">
           <Image src={WtsAppIcon} alt="WhatsApp" class="w-5 h-5" />
-          <span>{SocialNetworksUrl.CelPhone}</span>
+          <span>{SocialNetworksUrl.Phone}</span>
         </li>
         <li class="flex items-center gap-2">
           <Image src={MailIcon} alt="Correo" class="w-5 h-5" />
@@ -47,7 +47,7 @@ import { SocialNetworksUrl } from "@data/socialNetworks";
       {
         navLinks.map((link) => (
           <a
-            class="hover:text-[#009ee2] transition-colors duration-300"
+            class="hover:text-light-blue transition-colors duration-300"
             href={link.href}
           >
             {link.name}
