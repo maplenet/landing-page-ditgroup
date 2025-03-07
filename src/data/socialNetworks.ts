@@ -10,4 +10,7 @@ export const enum SocialNetworksUrl {
   EmailTransport = "info@dittransporte.com.bo",
   EmailOutsourcing = "info@ditoutsourcing.com.bo",
   EmailCommercial = "info@ditcomercial.com.bo",
+  FacebookTransport = "https://www.facebook.com/dittransportedecarga",
+  FacebookOutsourcing = "https://www.facebook.com/ditoutsourcing",
+  FacebookCommercial = "https://www.facebook.com/DITComercial",
 }

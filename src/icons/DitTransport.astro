@@ -3,12 +3,27 @@ interface Props {
   cls1?: string;
   cls2?: string;
   cls3?: string;
+  width?: number;
+  height?: number;
+  hasHover?: boolean;
 }
 
-const { cls1 = "#ededed", cls2 = "#009ee2", cls3 = "#162d4a" } = Astro.props;
+const {
+  cls1 = "#ededed",
+  cls2 = "#009ee2",
+  cls3 = "#162d4a",
+  width,
+  height,
+  hasHover = false,
+} = Astro.props;
 ---
 
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 225.12 103.33"
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 225.12 103.33"
+  width={width}
+  height={height}
+  class={`${hasHover ? "hover-card" : ""}`}
   ><defs></defs><g id="Layer_2" data-name="Layer 2"
     ><g id="Layer_1-2" data-name="Layer 1"
       ><rect class="cls-1" width="225.12" height="103.33" rx="14.38"
@@ -153,13 +168,13 @@ const { cls1 = "#ededed", cls2 = "#009ee2", cls3 = "#162d4a" } = Astro.props;
     fill: var(--cls3);
     transition: fill 0.3s ease;
   }
-  svg:hover .cls-1 {
+  .hover-card:hover .cls-1 {
     fill: #009ee2;
   }
-  svg:hover .cls-2 {
+  .hover-card:hover .cls-2 {
     fill: #ededed;
   }
-  svg:hover .cls-3 {
+  .hover-card:hover .cls-3 {
     fill: #162d4a;
   }
 </style>

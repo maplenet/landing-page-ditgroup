@@ -4,15 +4,31 @@ interface Props {
   src: ImageMetadata;
   title: string;
   description: string;
+  hasHover?: boolean;
 }
 
-const { src, title, description } = Astro.props;
+const { src, title, description, hasHover = true } = Astro.props;
 ---
 
-<article class="flex md:flex-nowrap flex-wrap justify-center bg-[#f2f2f2] p-4 rounded-lg shadow-md max-w-md gap-4">
+<article
+  class={`${hasHover ? "hover-card" : ""} flex md:flex-nowrap flex-wrap justify-center bg-secondary p-4 rounded-lg shadow-md max-w-md gap-4`}
+>
   <Image src={src} alt={title} width={160} height={60} />
   <div>
     <h2>{title}</h2>
     <p>{description}</p>
   </div>
 </article>
+
+<style>
+  .hover-card {
+    transition: all 0.3s ease;
+  }
+  .hover-card:hover {
+    transform: scale(1.1);
+    background-color: #0d2b4b;
+  }
+  .hover-card:hover h2, .hover-card:hover p {
+    color: #f2f2f2 !important;
+  }
+</style>

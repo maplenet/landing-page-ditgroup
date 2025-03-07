@@ -4,6 +4,7 @@ interface Props {
   cls2?: string;
   cls3?: string;
   cls4?: string;
+  hasHover?: boolean;
 }
 
 const {
@@ -11,10 +12,14 @@ const {
   cls2 = "#c4c2d4",
   cls3 = "#fff",
   cls4 = "#f29100",
+  hasHover = false,
 } = Astro.props;
 ---
 
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 225.12 103.33"
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 225.12 103.33"
+  class={`${hasHover ? "hover-card" : ""}`}
   ><defs></defs><g id="Layer_2" data-name="Layer 2"
     ><g id="Layer_1-2" data-name="Layer 1"
       ><rect class="cls-1" width="225.12" height="103.33" rx="14.38"
@@ -139,13 +144,13 @@ const {
     fill: var(--cls4);
     transition: fill 0.3s ease;
   }
-  svg:hover .cls-1 {
+  .hover-card:hover .cls-1 {
     fill: #f29100;
   }
-  svg:hover .cls-2 {
+  .hover-card:hover .cls-2 {
     fill: #ededed;
   }
-  svg:hover .cls-4 {
+  .hover-card:hover .cls-4 {
     fill: #3b4049;
   }
 </style>

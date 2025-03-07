@@ -1,13 +1,30 @@
 ---
+import DitTransport from "@icons/DitTransport.astro";
 import { Image } from "astro:assets";
+import { IconDitMapper } from "@utils/iconDitMapper";
 interface Props {
+  title: string;
   src: ImageMetadata;
-  alt: string;
   width?: number;
   height?: number;
 }
 
-const { src, alt, width = 1280, height = 600 } = Astro.props;
+const { src, width = 1280, height = 600, title } = Astro.props;
+
+const Icon = IconDitMapper(title);
 ---
 
-<Image src={src} alt={alt} width={width} height={height} class="mx-auto" />
+<div class="relative">
+  <Image src={src} alt={title} width={width} height={height} class="mx-auto" />
+  <div
+    class="absolute max-w-7xl mx-auto inset-0 flex items-end justify-center lg:pb-28 md:pb-16 pb-8"
+  >
+    <div class="lg:w-96 md:w-80 w-64">
+      {
+        Icon && (
+          <Icon cls1="none" cls2="#ededed" cls3="#ededed" cls4="#ededed" />
+        )
+      }
+    </div>
+  </div>
+</div>
