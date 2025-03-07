@@ -10,11 +10,11 @@ const REDIRECT_URL = import.meta.env.PUBLIC_FORM_REDIRECT_URL;
   method="POST"
   class="max-w-3xl py-11 px-6 sm:px-12 md:px-8 mx-auto"
 >
-  <!-- Tu clave de Web3Forms -->
   <input type="hidden" name="access_key" value={ACCESS_KEY} />
 
-  <!-- Redirección (si deseas) -->
   <input type="hidden" name="redirect" value={REDIRECT_URL} />
+
+  <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 
   <h1 class="text-3xl font-bold mb-4 px-3">CONTÁCTANOS</h1>
   <p class="mb-6 px-3">
@@ -89,7 +89,6 @@ const REDIRECT_URL = import.meta.env.PUBLIC_FORM_REDIRECT_URL;
     ></textarea>
   </div>
 
-  <!-- Contenedor hCaptcha -->
   <div
     class="h-captcha px-3"
     data-captcha="true"
@@ -101,7 +100,6 @@ const REDIRECT_URL = import.meta.env.PUBLIC_FORM_REDIRECT_URL;
     data-error-callback="onError"
   ></div>
 
-  <!-- Mensaje de error oculto (solo se muestra si el captcha no está llenado) -->
   <div 
     id="captchaError" 
     class="hidden px-3 text-red-600 text-sm mt-1"
