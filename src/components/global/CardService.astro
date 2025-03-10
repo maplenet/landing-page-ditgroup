@@ -1,0 +1,90 @@
+---
+interface Props {
+  title: string;
+  icon: any;
+  hasHover?: boolean;
+  hoverBgColor?: string;
+  hoverTextColor?: string;
+  hoverScale?: boolean;
+  bgColor?: string;
+  shadow?: boolean;
+  textColor?: string;
+  description?: string;
+  height?: string;
+}
+
+const {
+  title,
+  icon: Icon,
+  hasHover = false,
+  hoverBgColor = "#000000",
+  hoverTextColor = "#ffffff",
+  hoverScale = false,
+  bgColor = "#f2f2f2",
+  shadow = true,
+  textColor = "#3b4049",
+  description,
+  height,
+} = Astro.props;
+---
+
+<article
+  class={`
+    w-44
+    min-h-52 
+    p-4 
+    rounded-2xl 
+    flex flex-col 
+    items-center
+    justify-around
+    gap-4
+    card-base
+    ${shadow ? "shadow-md" : ""}
+    ${hasHover ? "card-service" : ""}
+    ${hasHover && hoverScale ? "hover:scale-110" : ""}
+  `}
+  style={`
+    --base-bg: ${bgColor};
+    --base-color: ${textColor};
+    height: ${height};
+    ${hasHover ? `--hover-bg:${hoverBgColor}; --hover-text:${hoverTextColor};` : ""}
+  `}
+>
+  <Icon />
+  <h3 class="text-xl text-center font-semibold">
+    {title}
+  </h3>
+  {
+    description ? (
+      <div class="features-container pt-4 border-t border-gray-200 text-center">
+        <details class="relative cursor-pointer">
+          <summary class="flex flex-col items-center gap-2 p-2 font-bold list-none">
+            <div class="text-xl transform rotate-90 transition-all">›</div>
+          </summary>
+          <p class="text-xs">{description}</p>
+        </details>
+      </div>
+    ) : (
+      ""
+    )
+  }
+</article>
+
+<style>
+  .card-base {
+    background-color: var(--base-bg, #ffffff);
+    color: var(--base-color, #3b4049);
+    transition: all 0.3s ease;
+  }
+  .card-service:hover {
+    background-color: var(--hover-bg, #000000);
+    color: var(--hover-text, #ffffff);
+  }
+  .card-base p {
+  color: var(--base-color, #3b4049);
+}
+
+.card-service:hover p {
+  color: var(--hover-text, #ffffff);
+}
+</style>

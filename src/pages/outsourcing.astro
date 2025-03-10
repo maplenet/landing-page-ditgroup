@@ -1,0 +1,35 @@
+---
+import Banner from "@components/global/Banner.astro";
+import Layout from "@layouts/Layout.astro";
+import banner from "@assets/images/Banners DIT Outsourcing.webp";
+import InfoDit from "@components/global/InfoDit.astro";
+import ServiceDit from "@components/global/ServiceDit.astro";
+import { outsourcingService } from "@data/outsourcingService";
+import Contact from "@components/global/Contact.astro";
+import { SocialNetworksUrl } from "@data/socialNetworks";
+---
+
+<Layout>
+  <Banner src={banner} title="Outsourcing" />
+  <InfoDit
+    title="¿QUÉ ES DIT OUTSOURCING?"
+    description="Nuestra división Outsourcing se ha convertido en un estratégico aliado a la hora de emprender proyectos. Varias empresas se ven envueltas en trámites administrativos para poder habilitar a un recurso nuevo y pierden horas laborales importantes para realizar trabajos inmediatos. Dit Group se encarga de todos los asuntos administrativos, usted sólo de realizar su trabajo."
+  />
+  <ServiceDit
+    title="SERVICIOS 2025"
+    service={outsourcingService}
+    maxWidth="28rem"
+    hasHover={true}
+    hoverBgColor="#0d2b4b"
+    hoverScale={true}
+  />
+  <Contact
+    title="Outsourcing"
+    phone={SocialNetworksUrl.Phone}
+    contact={SocialNetworksUrl.FacebookOutsourcing}
+    cls1="#f29100"
+    cls2="#ededed"
+    cls3="#fff"
+    cls4="#3b4049"
+  />
+</Layout>

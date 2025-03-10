@@ -1,13 +1,15 @@
 ---
-import Banner from "@components/home/Banner.astro";
+import Banner from "@components/global/Banner.astro";
 import BannerDownload from "@components/home/BannerDownload.astro";
 import Clients from "@components/home/Clients.astro";
 import SliderImages from "@components/home/SliderImages.astro";
 import Layout from "@layouts/Layout.astro";
+import banner from "@assets/images/hero.webp";
+
 ---
 
 <Layout>
-  <Banner />
+  <Banner src={banner} title="Banner" />
   <SliderImages />
   <BannerDownload />
   <Clients />

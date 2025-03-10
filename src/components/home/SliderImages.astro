@@ -1,21 +1,45 @@
 ---
 import { Routes } from "@data/navLinks";
-import DitComercial from "@icons/DitComercial.astro";
+import DitCommercial from "@icons/DitCommercial.astro";
 import DitOutsourcing from "@icons/DitOutsourcing.astro";
 import DitTransport from "@icons/DitTransport.astro";
-import { Image } from "astro:assets";
 ---
 
-<section
-  class="flex flex-wrap justify-center gap-8 p-8 mx-auto my-0"
+<a
+  href={Routes.Services}
+  class="service mx-auto my-0 w-full lg:max-w-4xl max-w-11/12 bg-secondary rounded-2xl p-8 text-center"
 >
+  <h2 class="text-3xl">SERVICIOS EN INGENIERIA</h2>
+  <p class="text-xl">Brindamos soluciones integrales para proyectos telecom</p>
+</a>
+<section class="flex flex-wrap justify-center gap-8 p-8 mx-auto my-0">
   <a class="w-72" href={Routes.Transport}>
-    <DitTransport />
+    <DitTransport hasHover={true} />
   </a>
   <a class="w-72" href={Routes.Outsourcing}>
-    <DitOutsourcing />
+    <DitOutsourcing hasHover={true} />
   </a>
   <a class="w-72" href={Routes.Commercial}>
-    <DitComercial />
+    <DitCommercial hasHover={true} />
   </a>
 </section>
+
+<style>
+  p {
+    color: #0d2b4b !important;
+    transition: color 0.3s ease;
+  }
+
+  .service {
+    transition: background-color 0.3s ease;
+  }
+
+  .service:hover {
+    background-color: #0d2b4b;
+  }
+
+  .service:hover h2,
+  .service:hover p {
+    color: #fff !important;
+  }
+</style>

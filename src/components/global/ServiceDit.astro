@@ -1,0 +1,56 @@
+---
+import type { ServiceItem } from "@/types/services";
+import CardService from "./CardService.astro";
+
+interface Props {
+  title: string;
+  service: ServiceItem[];
+  hasHover?: boolean;
+  hoverBgColor?: string;
+  hoverTextColor?: string;
+  hoverScale?: boolean;
+  bgColor?: string;
+  shadow?: boolean;
+  textColor?: string;
+  maxWidth?: string;
+  height?: string;
+}
+
+const {
+  title,
+  service,
+  hasHover = false,
+  hoverBgColor = "#000000",
+  hoverTextColor = "#ffffff",
+  hoverScale = false,
+  bgColor = "bg-white",
+  shadow = true,
+  textColor = "#000000",
+  maxWidth = "48rem",
+  height,
+} = Astro.props;
+---
+
+<h1 class="text-center text-3xl">{title}</h1>
+<section
+  style={{ maxWidth: maxWidth }}
+  class="mx-auto my-5 flex flex-wrap gap-6 items-center justify-center"
+>
+  {
+    service.map(({ title, icon, description }) => (
+      <CardService
+        title={title}
+        icon={icon}
+        description={description}
+        height={height}
+        hasHover={hasHover}
+        hoverBgColor={hoverBgColor}
+        hoverTextColor={hoverTextColor}
+        hoverScale={hoverScale}
+        bgColor={bgColor}
+        shadow={shadow}
+        textColor={textColor}
+      />
+    ))
+  }
+</section>

@@ -1,0 +1,39 @@
+---
+import CardCategory from "./CardCategory.astro";
+import datacom from "@assets/images/Datacom.webp";
+import energy from "@assets/images/Energía.webp";
+import optic from "@assets/images/Optica ip.webp";
+import storage from "@assets/images/Storage.webp";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<h1 class="text-center text-3xl">{title}</h1>
+<section
+  class="mx-auto my-5 flex flex-wrap gap-10 items-center justify-center max-w-5xl w-11/12 md:w-full"
+>
+  <CardCategory
+    src={datacom}
+    title="DATACOM"
+    description="Soluciones de conectividad y redes diseñadas para garantizar una transmisión de datos eficiente, segura y de alta velocidad, adaptadas a las necesidades de comunicación modernas."
+  />
+  <CardCategory
+    src={storage}
+    title="STORAGE"
+    description="Tecnologías avanzadas de almacenamiento que garantizan la gestión segura, eficiente y escalable de datos críticos, adaptándose a las demandas de un entorno digital en constante crecimiento."
+  />
+  <CardCategory
+    src={energy}
+    title="ENERGÍA"
+    description="Soluciones innovadoras y sostenibles para garantizar un suministro energético confiable, eficiente y adaptable a las necesidades tecnológicas actuales."
+  />
+  <CardCategory
+    src={optic}
+    title="ÓPTICA IP"
+    description="Infraestructura de redes ópticas avanzadas que combina alta capacidad, baja latencia y escalabilidad para soportar el crecimiento del tráfico IP y las demandas de conectividad moderna."
+  />
+</section>

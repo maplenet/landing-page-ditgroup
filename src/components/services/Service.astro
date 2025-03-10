@@ -1,14 +1,39 @@
 ---
+import type { Services } from "@/types/services";
+
 interface Props {
-  title: string;
-  icon?: string;
+  service: Services;
+  index?: number;
 }
 
-const { title } = Astro.props;
+const { service, index = 0 } = Astro.props;
+const { title, description, list } = service;
+const color = index % 2 === 0 ? "#0d2b4b" : "#00aeef";
 ---
 
-<article class="py-8 px-20 border border-[#f7f7f7] rounded-lg bg-[#f7f7f7] max-w-5xl">
-  <slot name="icon" />
-  <h1 class="text-2xl font-bold text-[#0d2b4b]">{title}</h1>
-  <slot name="content" />
+<article
+  class="py-8 px-20 border border-gray-light rounded-lg bg-gray-light max-w-5xl shadow-md"
+>
+  <slot />
+  <h1 style={{ color: `${color}` }} class="text-2xl font-bold mb-4">{title}</h1>
+  <div slot="content" class="text-gray-500 max-w-4xl gap-2 flex flex-col">
+    {description.map((desc) => <p>{desc}</p>)}
+    {
+      list && (
+        <ol class="list-disc list-inside">
+          {list.map((item) =>
+            typeof item === "object" ? (
+              <ol class="list-decimal list-inside ml-5">
+                {item.map((subitem) => (
+                  <li>{subitem}</li>
+                ))}
+              </ol>
+            ) : (
+              <li>{item}</li>
+            )
+          )}
+        </ol>
+      )
+    }
+  </div>
 </article>
