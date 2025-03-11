@@ -1,0 +1,29 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "@layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  const legal = await getCollection("legal");
+  return legal.map((entry: { slug: string }) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+interface Entry {
+  render: () => Promise<{ Content: any }>;
+  data: { title: string };
+}
+
+const { entry } = Astro.props as unknown as { entry: Entry };
+const { Content } = await entry.render();
+---
+
+<Layout
+>
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <article class="prose prose-primary lg:prose-lg mx-auto">
+      <Content />
+    </article>
+  </main>
+</Layout>
