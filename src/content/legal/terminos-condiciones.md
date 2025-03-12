@@ -1,10 +1,9 @@
 ---
 title: 'Términos y condiciones'
-description: 'Términos y condiciones de uso de StreamFlix'
+description: 'Términos y condiciones de uso'
 ---
 
 # Términos y condiciones
-
 Fecha de última actualización: 11/03/2025
 
 ## 1. CONTRATO DE LICENCIA UNICA - DIT GROUP
